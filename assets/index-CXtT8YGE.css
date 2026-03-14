@@ -1,0 +1,1 @@
+@media (width<=1024px){.dashboard-grid{grid-template-columns:repeat(2,1fr)!important}}@media (width<=768px){.dashboard-grid,.charts-container{grid-template-columns:1fr!important}}@media (width<=480px){.date-filter{flex-direction:column!important;align-items:stretch!important}.date-filter>div{width:100%}}
