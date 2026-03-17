@@ -1,9 +1,12 @@
+import { ThemeProvider } from "./components/context/themecontext";
 import AdmissionDashboard from "./components/pages/AdmissionDashboard";
 
 function App() {
   return (
     <div>
-      <AdmissionDashboard />
+      <ThemeProvider>
+        <AdmissionDashboard />
+      </ThemeProvider>
     </div>
   );
 }

@@ -5,10 +5,13 @@ import DateFilter from "../filters/DateFilter";
 import Card from "../cards/Card";
 import BarChart from "../charts/BarChart";
 import TrendChart from "../charts/TrendChart.jsx";
+import { useTheme } from "../context/themecontext.jsx";
 
 function AdmissionDashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { toggle } = useTheme();
+
 
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
@@ -40,6 +43,8 @@ function AdmissionDashboard() {
   return (
     <div style={{ padding: "20px" }}>
       <h1>Admission Dashboard</h1>
+
+      <input onClick={toggle} type="button" value="Toggle Theme" />
 
       <DateFilter
         fromDate={fromDate}

@@ -1,6 +1,9 @@
+import { useTheme } from "../context/themecontext";
+import UniversityDarkTheme from "../theme/UniversityDarkTheme";
 import UniversityTheme from "../theme/UniversityTheme";
 
 function Card({ title, value, bgColor }) {
+  const {toggleTheme, isDark} = useTheme();
   const getValueColor = (num) => {
     if (num > 1000) return UniversityTheme.danger;
     if (num > 500) return UniversityTheme.warning;
@@ -10,7 +13,7 @@ function Card({ title, value, bgColor }) {
   return (
     <div
       style={{
-        backgroundColor: bgColor || UniversityTheme.cardBg,
+        backgroundColor: isDark ? UniversityDarkTheme.cardBg : UniversityTheme.cardBg,
         padding: "20px",
         borderRadius: "8px",
         boxShadow: UniversityTheme.cardShadow,
